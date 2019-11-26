@@ -9,7 +9,6 @@
 
   NoteList.prototype.createAndStore = function(note) {
     this.array.push(note.text);
-    return note.text
   };
 
   exports.NoteList = NoteList;
