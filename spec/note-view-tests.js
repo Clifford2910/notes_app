@@ -1,20 +1,20 @@
 function testReturnOneHTML() {
   var noteList = new NoteList;
-  var note = new Note("Hello");
+  var note = new Note(this.text);
   noteList.createAndStore(note);
   var noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.returnHTML() === "<ul><li><div>Hello</div></li></ul>");
+  assert.isTrue(noteListView.returnHTML() === "<ul><li><div>" + note.text + "</div></li></ul>");
 };
 testReturnOneHTML();
 
 function testReturnMultipleHTML() {
   var noteList = new NoteList;
-  var note = new Note("Hello");
-  var note1 = new Note("Goodbye");
+  var note = new Note(this.text);
+  var note1 = new Note(this.text);
   noteList.createAndStore(note);
   noteList.createAndStore(note1);
   var noteListView = new NoteListView(noteList)
-  assert.isTrue(noteListView.returnHTML() === "<ul><li><div>Hello</div></li><li><div>Goodbye</div></li></ul>");
+  assert.isTrue(noteListView.returnHTML() === "<ul><li><div>" + note.text + "</div></li><li><div>" + note1.text + "</div></li></ul>");
 };
 testReturnMultipleHTML();
 
