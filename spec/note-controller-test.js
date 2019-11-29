@@ -1,6 +1,6 @@
 function testAddHTMLToApp() {
-  var note = new Note(this.text)
-  var note1 = new Note(this.text)
+  var note = new Note("Hello")
+  var note1 = new Note("Goodbye")
   var noteList = new NoteList
   noteList.createAndStore(note)
   noteList.createAndStore(note1)
