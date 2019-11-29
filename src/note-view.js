@@ -1,9 +1,9 @@
 (function(exports) {
-  function NoteListView(noteList) {
+  function NoteView(noteList) {
     this.list = noteList
   }
 
-  NoteListView.prototype.returnHTML = function() {
+  NoteView.prototype.returnHTML = function() {
     var aStringOfHTML = []
 
     for (var i = 0; i < this.list.array.length; i++) {
@@ -16,5 +16,5 @@
     return aStringOfHTML.join("");
   }
 
-  exports.NoteListView = NoteListView;
+  exports.NoteView = NoteView;
 })(this);
