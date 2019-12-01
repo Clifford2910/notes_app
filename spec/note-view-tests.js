@@ -24,3 +24,12 @@ function testReturnNoHTML() {
   assert.isTrue(noteListView.returnHTML() === "<ul></ul>");
 };
 testReturnNoHTML();
+
+function testTruncateReducesStringLength() {
+  var noteList = new NoteList;
+  var note = new Note("is this string long enough to truncate");
+  noteList.createAndStore(note);
+  var noteView = new NoteView(noteList)
+  assert.isTrue(noteView.textTruncate("is this string long enough to truncate") === "is this string long ...");
+};
+testTruncateReducesStringLength();
